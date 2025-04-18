@@ -1,4 +1,8 @@
-const arrayNums = [];
+
+let num1;
+let num2;
+
+const arrayNums = [num1, num2];
 
 
 
@@ -53,6 +57,26 @@ console.log(divide([2, 4]));
 // each part of the operation. You’ll use these variables to update
 // your display later.
 
-let num1;
-let num2;
-let operand;
+const operand = [add, subtract, multiply, divide];
+
+
+// Create a new function operate that takes an operator and two numbers 
+// and then calls one of the above functions on the numbers.
+
+function operate([...operand]) {
+
+
+return operand;
+    
+ 
+ 
+
+};
+//operate([add([2, 4])]);
+console.log(operate([add([2, 4])])); // prints 6
+
+console.log(operate([subtract([2, 4])])); // -2 // yes works
+
+console.log(operate([multiply([2, 4])])); // 8 // yes works
+
+console.log(operate([divide([2, 4])])); // .5 // yes works
