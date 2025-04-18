@@ -220,9 +220,12 @@ let opBtns = document.querySelectorAll("#operator-btn-box button");
 let updateNumDisplay;
 
 
+
+
+
 function pressNum() {
 
-
+ 
 
 //console.log(numBtns); // all numbered buttons
 
@@ -230,106 +233,393 @@ numBtns.forEach(numBtn => {
 
 numBtn.addEventListener("click", (e) => {
   // num1 = numBtn;
-  num1 = e.target;
+ let newNumBtn = e.target;
+
+  num1 = newNumBtn;
+
+  newNumBtn = num1;
+
+  let num1Txt = num1.textContent;
    // console.log(num1); is number pressed
-  let num1Txt = parseInt(num1.textContent);
+  
   //num1.textContent = parseInt(num1Txt);
   
   
   
-    if (displayBox.textContent = "") {
-   
+    if (displayBox.textContent === "") {
+      num1Txt = num1.textContent;
   updateNumDisplay = displayBox.textContent = num1Txt;
  // console.log(updateNumDisplay);
   return updateNumDisplay;
     } else {
-      if (displayBox.textContent = num1Txt) {
-        opBtns.forEach(opBtn => {
-        opBtn.addEventListener("click", (e) => {
-        updateNumDisplay = displayBox.textContent = num1Txt + opBtn.textContent;
-        console.log(updateNumDisplay);
-       
 
-        if (displayBox.textContent = num1.textContent + opBtn.textContent) {
+      opBtns.forEach(opBtn => {
+        opBtn.addEventListener("click", (e) => {
+        let newOpBtn = e.target;
+          let opBtnTxt = newOpBtn.textContent;
+
+      if (newOpBtn === e.target && displayBox.textContent === num1Txt) {
+        num1Txt = num1.textContent;
+
+        updateNumDisplay = displayBox.textContent = num1Txt + opBtnTxt;
+        console.log(updateNumDisplay);
+        
+       return updateNumDisplay;
+           
+
+        }
+        
+       else {
+        
+        if (newOpBtn === e.target && displayBox.textContent === num1Txt + opBtnTxt) {
+          num1Txt = num1.textContent;
+          opBtnTxt = newOpBtn.textContent;
+
           numBtns.forEach(numBtn => {
         numBtn.addEventListener("click", (e) => {
           //num2 = numBtn;
-          num2 = e.target;
-          let num2Txt = parseInt(num2.textContent);
+          let newNumBtn2 = e.target;
+          num2 = newNumBtn2;
+
+          newNumBtn2 = num2;
+
+          let num2Txt = num2.textContent;
          // num2.textContent = parseInt(num2Txt);
-          updateNumDisplay = displayBox.textContent = num1Txt + opBtn.textContent + num2Txt;
+          updateNumDisplay = displayBox.textContent = num1Txt + opBtnTxt + num2Txt;
           console.log(updateNumDisplay);
           //return updateNumDisplay;
 //if (equalsBtn.onclick) {
          
+
+
+
+if (displayBox.textContent === num1Txt + newOpBtn.textContent + num2Txt) {
+
 equalsBtn.addEventListener ("click", (e) => {
 
-  const add = function() {
-    // console.log(num1.textContent);
-    // console.log(num2.textContent);
-    // console.log(parseInt(num1.textContent));
-    // console.log(parseInt(num2.textContent));
-     return num1Txt + num2Txt; //parseInt(num1Txt) + parseInt(num2Txt);
-   };
-   
-   const subtract = function() {
-      return num1Txt - num2Txt; //parseInt(num1Txt) - parseInt(num2Txt)
-    };
-   
-    const multiply = function() {
-     return num1Txt * num2Txt; //parseInt(num1Txt) * parseInt(num2Txt)
-   };
-   
-   const divide = function() {
-     return num1Txt / num2Txt; //parseInt(num1Txt) / parseInt(num2Txt)
-   };
+  //let calculate = e.target;
+
+ // console.log(calculate);
+
+  if (equalsBtn === e.target) {
 
   let getDisplay = document.getElementById("display-box");
 
+  
           if (getDisplay.textContent.includes('+')) {
             console.log(add());
-           return add();
-          } else if (getDisplay.textContent.includes('-')) {
+            add();
+          let num1Txt2 = add();
+
+          num1 = num1Txt2;
+
+          num1Txt2 = num1;
+
+
+
+          // let num1Txt2 = num1Txt;
+
+            // let stringNum1 = num1.toString();
+           // console.log(stringNum1);
+           console.log(num1Txt2);
+           // console.log(displayBox.textContent = add());
+          updateNumDisplay = displayBox.textContent = num1Txt2;
+          console.log(updateNumDisplay);
+         // return updateNumDisplay;
+
+         
+
+             if (displayBox.textContent === num1Txt2) {
+             // num1 = add();
+              num1Txt2 = add();
+
+              opBtns.forEach(opBtn => {
+                opBtn.addEventListener("click", (e) => {   
+                  
+                 let opBtnTxt2 = opBtn.textContent;
+
+updateNumDisplay = displayBox.textContent = num1Txt2 + opBtnTxt2;
+console.log(updateNumDisplay);
+return updateNumDisplay;
+
+                }); // end listener for now
+              }); //end loop for now
+            } //end if for now
+    /*
+
+     if (displayBox.textContent = newNum1 + newOpBtn.textContent) {
+        
+        numBtns.forEach(numBtn => {
+          numBtn.addEventListener("click", (e) => {
+        newNum2 = e.target;
+        let newNum2Txt = parseInt(newNum2);
+
+        updateNumDisplay = displayBox.textContent = newNum1 + newOpBtn.textContent + newNum2Txt;
+        console.log(updateNumDisplay);
+        return updateNumDisplay;
+
+      }); // end of listener number btn
+    }); // end of num btn for loop
+
+      } // nest if statement end
+
+    }); // op btn listener
+  }); // op btn for each loop
+
+
+
+             } // end of if statement
+  
+            } // end of other if statement
+   
+
+           else if (getDisplay.textContent.includes('-')) {
             console.log(subtract());
-           return subtract();
-          } else if (getDisplay.textContent.includes('x')) {
+            subtract();
+            newNum1 = subtract();
+
+            
+           console.log(newNum1);
+           
+          updateNumDisplay = displayBox.textContent = newNum1;
+          console.log(updateNumDisplay);
+
+          
+
+             if (displayBox.textContent === newNum1) {
+              
+              opBtns.forEach(opBtn => {
+                opBtn.addEventListener("click", (e) => {
+    
+                 let newOpBtn = e.target;
+                 let newOpBtnTxt = newOpBtn.textContent;
+              
+
+updateNumDisplay = displayBox.textContent = newNum1 + newOpBtnTxt;
+console.log(updateNumDisplay);
+//return updateNumDisplay;
+
+
+    
+
+     if (displayBox.textContent = newNum1 + newOpBtn.textContent) {
+        
+        numBtns.forEach(numBtn => {
+          numBtn.addEventListener("click", (e) => {
+        newNum2 = e.target;
+        let newNum2Txt = parseInt(newNum2);
+
+        updateNumDisplay = displayBox.textContent = newNum1 + newOpBtn.textContent + newNum2Txt;
+        console.log(updateNumDisplay);
+        return updateNumDisplay;
+
+      }); // end of listener number btn
+    }); // end of num btn for loop
+
+      } // nest if statement end
+
+    }); // op btn listener
+  }); // op btn for each loop
+
+
+
+             } // end of if statement
+  
+            } // end of other if statement
+
+
+           else if (getDisplay.textContent.includes('x')) {
             console.log(multiply());
-           return multiply();
-          } else if (getDisplay.textContent.includes('/')) {
+            multiply();
+            newNum1 = multiply();
+
+            
+           console.log(newNum1);
+           
+          updateNumDisplay = displayBox.textContent = newNum1;
+          console.log(updateNumDisplay);
+
+          
+
+             if (displayBox.textContent === newNum1) {
+              
+              opBtns.forEach(opBtn => {
+                opBtn.addEventListener("click", (e) => {
+    
+                 let newOpBtn = e.target;
+                 let newOpBtnTxt = newOpBtn.textContent;
+              
+
+updateNumDisplay = displayBox.textContent = newNum1 + newOpBtnTxt;
+console.log(updateNumDisplay);
+//return updateNumDisplay;
+
+
+    
+
+     if (displayBox.textContent = newNum1 + newOpBtn.textContent) {
+        
+        numBtns.forEach(numBtn => {
+          numBtn.addEventListener("click", (e) => {
+        newNum2 = e.target;
+        let newNum2Txt = parseInt(newNum2);
+
+        updateNumDisplay = displayBox.textContent = newNum1 + newOpBtn.textContent + newNum2Txt;
+        console.log(updateNumDisplay);
+        return updateNumDisplay;
+
+      }); // end of listener number btn
+    }); // end of num btn for loop
+
+      } // nest if statement end
+
+    }); // op btn listener
+  }); // op btn for each loop
+
+
+
+             } // end of if statement
+  
+            } // end of other if statement
+
+
+
+          else if (getDisplay.textContent.includes('/')) {
             console.log(divide());
-           return divide();
-          } else {
+            divide();
+            newNum1 = divide();
+
+            
+           console.log(newNum1);
+           
+          updateNumDisplay = displayBox.textContent = newNum1;
+          console.log(updateNumDisplay);
+
+          
+
+             if (displayBox.textContent === newNum1) {
+              
+              opBtns.forEach(opBtn => {
+                opBtn.addEventListener("click", (e) => {
+    
+                 let newOpBtn = e.target;
+                 let newOpBtnTxt = newOpBtn.textContent;
+              
+
+updateNumDisplay = displayBox.textContent = newNum1 + newOpBtnTxt;
+console.log(updateNumDisplay);
+//return updateNumDisplay;
+
+
+    
+
+     if (displayBox.textContent = newNum1 + newOpBtn.textContent) {
+        
+        numBtns.forEach(numBtn => {
+          numBtn.addEventListener("click", (e) => {
+        newNum2 = e.target;
+        let newNum2Txt = parseInt(newNum2);
+
+        updateNumDisplay = displayBox.textContent = newNum1 + newOpBtn.textContent + newNum2Txt;
+        console.log(updateNumDisplay);
+        return updateNumDisplay;
+
+      }); // end of listener number btn
+    }); // end of num btn for loop
+
+      } // nest if statement end
+
+    }); // op btn listener
+  }); // op btn for each loop
+
+
+
+             } // end of if statement
+
+          
+  
+            } // end of other if statement
+
+           else {
             return;
           }
+
+          */
+
+        //  console.log(updateNumDisplay);
+         // return updateNumDisplay;
       
+} // end of if for now
+
+console.log(updateNumDisplay);
+return updateNumDisplay;
+  } // end of if
+
+  console.log(updateNumDisplay);
+  return updateNumDisplay;
 
         }); // end of equal btn listener
+
+} // end of if 
 
      // } // end of if 
 
         }); // end of num btn listener
        // console.log(updateNumDisplay);
         //return updateNumDisplay; // this returns only num1 + op no num2
+
+    
+
       }); // end of num btn for each loop
+
+      console.log(updateNumDisplay);
+      return updateNumDisplay;
+
       } // end of if inside for num btn 2
-        }); // end of ops btn listener
-       // console.log(updateNumDisplay);
-       // return updateNumDisplay; this is undefined which is out of scope
-       
-      }); // end of op btn for each
+
+    } // end of else
       
-      } // end of if
+     //   }); // end of ops btn listener
+       // console.log(updateNumDisplay);
+       // return updateNumDisplay; //this is undefined which is out of scope
+       
+
+       
+    //  }); // end of op btn for each
+      
+
+      
+     // } // end of if
+
+      /*
+      else if (displayBox.textContent === num1) {
+displayBox.textContent = num1 + opBtn.textContent + num2;
+      } else {
+        return;
+      }
+      */
+    }); //end of op button listener
+  }); // end of op button loop
+  
     
     } // end of else
+
+    
    
 }); // event listener end
 
 //console.log(updateNumDisplay); // not defined here so out of scope
 
+
+
 }); // for each loop end
 
-return numBtns;
 
+
+
+//return numBtns;
+//console.log(updateNumDisplay);
+//return updateNumDisplay; out of scope
 
 };
 
@@ -338,14 +628,27 @@ pressNum();
 // console.log(pressNum()); returns all numbered buttons
 
 
-// Make the calculator work! You’ll need to store the first and second numbers 
-// input by the user and then operate() on them when the user presses the = button, 
-// according to the operator that was selected between the numbers.
-
-// You should already have the code that can populate the display, so once operate
-// has been called, update the display with the result of the operation.
-
-// store all the values and call the operate function with them.
+const add = function() {
+  // console.log(num1.textContent);
+ //  console.log(num2.textContent);
+ //  console.log(parseInt(num1.textContent));
+  // console.log(parseInt(num2.textContent));
+   return num1.textContent + num2.textContent; //parseInt(num1Txt) + parseInt(num2Txt);
+ };
+ 
+ /*
+ const subtract = function() {
+    return parseInt(num1.textContent) - parseInt(num2.textContent); //parseInt(num1Txt) - parseInt(num2Txt)
+  };
+ 
+  const multiply = function() {
+   return parseInt(num1.textContent) * parseInt(num2.textContent); //parseInt(num1Txt) * parseInt(num2Txt)
+ };
+ 
+ const divide = function() {
+   return parseInt(num1.textContent) / parseInt(num2.textContent); //parseInt(num1Txt) / parseInt(num2Txt)
+ };
+*/
 
 
 
