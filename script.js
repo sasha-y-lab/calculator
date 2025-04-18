@@ -229,10 +229,12 @@ function pressNum() {
 numBtns.forEach(numBtn => {
 
 numBtn.addEventListener("click", (e) => {
-  num1 = numBtn;
+  // num1 = numBtn;
+  num1 = e.target;
    // console.log(num1); is number pressed
   let num1Txt = num1.textContent;
   parseInt(num1Txt);
+  
   
     if (displayBox.textContent = "") {
    
@@ -243,31 +245,51 @@ numBtn.addEventListener("click", (e) => {
       if (displayBox.textContent = num1Txt) {
         opBtns.forEach(opBtn => {
         opBtn.addEventListener("click", (e) => {
-        updateNumDisplay = displayBox.textContent = num1.textContent + opBtn.textContent;
+        updateNumDisplay = displayBox.textContent = num1Txt + opBtn.textContent;
         console.log(updateNumDisplay);
+       
+
+        if (displayBox.textContent = num1.textContent + opBtn.textContent) {
+          numBtns.forEach(numBtn => {
         numBtn.addEventListener("click", (e) => {
-          num2 = numBtn;
+          //num2 = numBtn;
+          num2 = e.target;
           let num2Txt = num2.textContent;
           parseInt(num2Txt);
-          updateNumDisplay = displayBox.textContent = num1.textContent + opBtn.textContent + num2Txt;
+          updateNumDisplay = displayBox.textContent = num1Txt + opBtn.textContent + num2Txt;
           console.log(updateNumDisplay);
-          //return updateNumDisplay;
-
-          let getDisplay = document.getElementById("display-box");
+          return updateNumDisplay;
+//if (equalsBtn.onclick) {
+   /*       
 equalsBtn.addEventListener ("click", (e) => {
-
+  let getDisplay = document.getElementById("display-box");
 
           if (getDisplay.textContent.includes('+')) {
             console.log(add());
            return add();
+          } else if (getDisplay.textContent.includes('-')) {
+            console.log(subtract());
+           return subtract();
+          } else if (getDisplay.textContent.includes('*')) {
+            console.log(multiply());
+           return multiply();
+          } else if (getDisplay.textContent.includes('/')) {
+            console.log(divide());
+           return divide();
+          } else {
+            return;
           }
+      
 
         }); // end of equal btn listener
+*/
+     // } // end of if 
 
         }); // end of num btn listener
        // console.log(updateNumDisplay);
         //return updateNumDisplay; // this returns only num1 + op no num2
-        
+      }); // end of num btn for each loop
+      } // end of if inside for num btn 2
         }); // end of ops btn listener
        // console.log(updateNumDisplay);
        // return updateNumDisplay; this is undefined which is out of scope
@@ -304,79 +326,7 @@ pressNum();
 // store all the values and call the operate function with them.
 
 
-//const arrayNums = [num1Txt, num2Txt];
-// start calculation functions here
-/*
-const add = function([...arrayNums]) {
-	addBtn.textContent;
-  //console.log(addBtn.textContent); shows
-  let addNums = arrayNums.reduce((number, currentNum) => {
 
-      return number + currentNum;
-
-  });
-  return addNums;
-  
-};
-
-
-const subtract = function([...arrayNums]) {
-subtractBtn.textContent;
-let subtractNums = arrayNums.reduce((number, currentNum) => {
-      return number - currentNum;
-    });
-    return subtractNums;
-};
-
-
-const multiply = function([...arrayNums]) {
-multiplyBtn.textContent;
-  let productOfNums = arrayNums.reduce((number, currentNum) => {
-    return number * currentNum;
-  }, 1); // 1 needs to only be there for multiplication
-  return productOfNums;
-
-};
-
-const divide = function([...arrayNums]) {
-divideBtn.textContent;
-  let divideNums = arrayNums.reduce((number, currentNum) => {
-    return number / currentNum;
-  });
-  return divideNums;
-
-};
-*/
-
-/*
-console.log(add([num1, num2]));
-
-console.log(add([2, 4]));
-console.log(subtract([2, 4]));
-console.log(multiply([2, 4]));
-console.log(divide([2, 4]));
-*/
-
-
-
-
-//const operand = [add, subtract, multiply, divide]; 
-//console.log(operand);
-// start operate here
-/*
-function operate() {
-
-  equalsBtn.addEventListener("click", (e) => {
-    
-    
-  
-  });
-  
-  
-  };
-
-  operate();
-*/
 
 const add = function() {
  // console.log(num1.textContent);
@@ -386,27 +336,15 @@ const add = function() {
   return parseInt(num1.textContent) + parseInt(num2.textContent);
 };
 
-/*
-  function calculate() {
-      
-let getDisplay = document.getElementById("display-box");
+const subtract = function() {
+   return parseInt(num1.textContent) - parseInt(num2.textContent);
+ };
 
-//console.log(getDisplay);
+ const multiply = function() {
+  return parseInt(num1.textContent) * parseInt(num2.textContent);
+};
 
-console.log(getDisplay.textContent.includes('+'));
-
-
-
-    if (getDisplay.textContent.includes('+')) {
-      console.log(add);
-     add;
-    } else {
-      return;
-    }
-    
-    return add;
-
-  };
-  calculate();
-
-  */
+const divide = function() {
+  return parseInt(num1.textContent) / parseInt(num2.textContent);
+};
+ 
