@@ -1,73 +1,26 @@
 
-let num1;
-let num2;
-
-const arrayNums = [num1, num2];
 
 
 
-const add = function([...arrayNums]) {
-	
-    let addNums = arrayNums.reduce((number, currentNum) => {
-
-        return number + currentNum;
-
-    });
-    return addNums;
-    
-};
 
 
-const subtract = function([...arrayNums]) {
-	let subtractNums = arrayNums.reduce((number, currentNum) => {
-        return number - currentNum;
-      });
-      return subtractNums;
-};
-
-
-const multiply = function([...arrayNums]) {
-
-    let productOfNums = arrayNums.reduce((number, currentNum) => {
-      return number * currentNum;
-    }, 1); // 1 needs to only be there for multiplication
-    return productOfNums;
-  
-  };
-
-  const divide = function([...arrayNums]) {
-
-    let divideNums = arrayNums.reduce((number, currentNum) => {
-      return number / currentNum;
-    });
-    return divideNums;
-  
-  };
-
-  /*
+/*
 console.log(add([2, 4]));
 console.log(subtract([2, 4]));
 console.log(multiply([2, 4]));
 console.log(divide([2, 4]));
-
 */
 
-// A calculator operation will consist of a number, an operator, and 
-// another number. For example, 3 + 5. Create three variables, one for 
-// each part of the operation. You’ll use these variables to update
-// your display later.
 
-const operand = [add, subtract, multiply, divide];
+
 
 
 // Create a new function operate that takes an operator and two numbers 
 // and then calls one of the above functions on the numbers.
-
+/*
 function operate([...operand]) {
 
-
-return operand;
- 
+  return operand; 
 
 };
 //operate([add([2, 4])]);
@@ -79,6 +32,7 @@ return operand;
 
 //console.log(operate([divide([2, 4])])); // .5 // yes works
 
+*/
 
 // Create a basic HTML calculator with buttons for each digit and operator (including =).
 // There should also be a display for the calculator. 
@@ -93,7 +47,7 @@ calculatorBox.setAttribute("id", "calc-box-main");
 
 const displayBox = document.createElement("div");
 displayBox.setAttribute("id", "display-box");
-displayBox.textContent = "098765";
+displayBox.textContent = "";
 
 calculatorBox.appendChild(displayBox);
 
@@ -214,7 +168,7 @@ operatorHoldingBox.appendChild(divideBtn);
 
 const multiplyBtn = document.createElement("button");
 multiplyBtn.classList.add("multiply-btn");
-multiplyBtn.textContent = "X";
+multiplyBtn.textContent = "x";
 
 operatorHoldingBox.appendChild(multiplyBtn);
 
@@ -256,25 +210,58 @@ container.appendChild(calculatorBox);
 // digit buttons. You should store the content of the display (the number)
 // in a variable for use in the next step.
 
+let num1;
+let num2;
 
+const arrayNums = [num1, num2];
+
+let numBtns = document.querySelectorAll("#number-btn-box .nums");
+let opBtns = document.querySelectorAll("#operator-btn-box button");
+let updateNumDisplay;
+let updateOpDisplay;
 
 function pressNum() {
 
-let numBtns = document.querySelectorAll("#number-btn-box .nums");
+
 
 //console.log(numBtns); // all numbered buttons
 
 numBtns.forEach(numBtn => {
 
 numBtn.addEventListener("click", (e) => {
+  num1 = numBtn;
+   // console.log(num1); is number pressed
+  let num1Txt = num1.textContent;
   
-  let updateNumDisplay = displayBox.textContent = numBtn.textContent;
-
-  console.log(updatedDisplay);
+    if (displayBox.textContent = "") {
+   
+  updateNumDisplay = displayBox.textContent = num1Txt;
+ // console.log(updateNumDisplay);
   return updateNumDisplay;
-  
+    } else {
+      if (displayBox.textContent = num1Txt) {
+        opBtns.forEach(opBtn => {
+        opBtn.addEventListener("click", (e) => {
+        updateNumDisplay = displayBox.textContent = num1.textContent + opBtn.textContent;
+        console.log(updateNumDisplay);
+
+        numBtn.addEventListener("click", (e) => {
+          num2 = numBtn;
+          updateNumDisplay = displayBox.textContent = num1.textContent + opBtn.textContent + num2.textContent;
+
+        return updateNumDisplay;
+
+        }); // end of number buttons listener
+return updateNumDisplay;
+        }); // end of listener ops buttons
+      }); // end of for each ops button
+      }// end of first if
+      //return updateNumDisplay;
+    } // end of else
+    
 }); // event listener end
 
+//console.log(updateNumDisplay); // not defined here so out of scope
 
 }); // for each loop end
 
@@ -284,32 +271,155 @@ return numBtns;
 };
 
 pressNum();
+//let numbersPressed = pressNum();
 // console.log(pressNum()); returns all numbered buttons
 
-/*
+
+// Make the calculator work! You’ll need to store the first and second numbers 
+// input by the user and then operate() on them when the user presses the = button, 
+// according to the operator that was selected between the numbers.
+
+// You should already have the code that can populate the display, so once operate
+// has been called, update the display with the result of the operation.
+
+// store all the values and call the operate function with them.
+
+
+
 function pressOperand() {
 
-  addBtn.addEventListener("click", (e) => {
-    displayBox.textContent = "+";
-    //return add;
-  });
+opBtns.forEach(opBtn => {
 
-  subtractBtn.addEventListener("click", (e) => {
+  opBtn.addEventListener("click", (e) => {
+    
+    updateOpDisplay = displayBox.textContent = opBtn.textContent;
+  
+   // console.log(updateOpDisplay);
+    return updateOpDisplay;
+    
+  }); // event listener end
+  
+  
+  }); // for each loop end
+  
+  return opBtns;
 
-    //return subtract;
-  });
-
-multiplyBtn.addEventListener("click", (e) => {
-
-  //return multiply;
-});
-
-divideBtn.addEventListener("click", (e) => {
-
-  //return divide;
-});
 
 };
 
-let operandPressed = pressOperand();
+pressOperand();
+let opsPressed = pressOperand();
+//console.log(pressOperand());
+
+
+/* else {
+  if (displayBox.textContent = num1Txt) {
+   pressOperand();
+   
+    num2 = numBtn;
+    updateNumDisplay = displayBox.textContent = num1.textContent + opBtns;
+    console.log(updateNumDisplay);
+    return updateNumDisplay;
+  }
+  //return updateNumDisplay;
+} // end of else
+
+*/
+
+
+// start calculation functions here
+
+const add = function([...arrayNums]) {
+	addBtn.textContent;
+  //console.log(addBtn.textContent); shows
+  let addNums = arrayNums.reduce((number, currentNum) => {
+
+      return number + currentNum;
+
+  });
+  return addNums;
+  
+};
+
+
+const subtract = function([...arrayNums]) {
+subtractBtn.textContent;
+let subtractNums = arrayNums.reduce((number, currentNum) => {
+      return number - currentNum;
+    });
+    return subtractNums;
+};
+
+
+const multiply = function([...arrayNums]) {
+multiplyBtn.textContent;
+  let productOfNums = arrayNums.reduce((number, currentNum) => {
+    return number * currentNum;
+  }, 1); // 1 needs to only be there for multiplication
+  return productOfNums;
+
+};
+
+const divide = function([...arrayNums]) {
+divideBtn.textContent;
+  let divideNums = arrayNums.reduce((number, currentNum) => {
+    return number / currentNum;
+  });
+  return divideNums;
+
+};
+/*
+console.log(add([2, 4]));
+console.log(subtract([2, 4]));
+console.log(multiply([2, 4]));
+console.log(divide([2, 4]));
+*/
+
+
+
+
+const operand = [add, subtract, multiply, divide]; 
+//console.log(operand);
+// start operate here
+function operate([...operand]) {
+
+  equalsBtn.addEventListener("click", (e) => {
+    num1 = numbersPressed();
+    console.log(num1);
+    return operand;
+  
+  });
+  
+  
+   
+  
+  };
+
+ // console.log(operate([add([2, 4])])); // 
+
+//console.log(operate([subtract([2, 4])])); // 
+
+//console.log(operate([multiply([2, 4])])); // 
+
+//console.log(operate([divide([2, 4])])); // 
+
+/*
+function storeNumsPressed() {
+
+  num1 = numbersPressed;
+  //console.log(numbersPressed); // shows all numbers
+  console.log(numbersPressed);
+  console.log(num1);
+
+  //if (displayBox.textContent = "") {
+    
+ // } else if (displayBox.textContent = numbersPressed) { //&& displayBox.textContent = opsPressed;
+   // console.log(numbersPressed);
+//}
+
+};
+
+storeNumsPressed();
+
+
 */
