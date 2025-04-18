@@ -213,12 +213,12 @@ container.appendChild(calculatorBox);
 let num1;
 let num2;
 
-const arrayNums = [num1, num2];
+
 
 let numBtns = document.querySelectorAll("#number-btn-box .nums");
 let opBtns = document.querySelectorAll("#operator-btn-box button");
 let updateNumDisplay;
-let updateOpDisplay;
+
 
 function pressNum() {
 
@@ -232,6 +232,7 @@ numBtn.addEventListener("click", (e) => {
   num1 = numBtn;
    // console.log(num1); is number pressed
   let num1Txt = num1.textContent;
+  parseInt(num1Txt);
   
     if (displayBox.textContent = "") {
    
@@ -246,17 +247,37 @@ numBtn.addEventListener("click", (e) => {
         console.log(updateNumDisplay);
         numBtn.addEventListener("click", (e) => {
           num2 = numBtn;
-          updateNumDisplay = displayBox.textContent = num1.textContent + opBtn.textContent + num2.textContent;
-        return updateNumDisplay;
+          let num2Txt = num2.textContent;
+          parseInt(num2Txt);
+          updateNumDisplay = displayBox.textContent = num1.textContent + opBtn.textContent + num2Txt;
+          console.log(updateNumDisplay);
+          //return updateNumDisplay;
+
+          let getDisplay = document.getElementById("display-box");
+equalsBtn.addEventListener ("click", (e) => {
+
+
+          if (getDisplay.textContent.includes('+')) {
+            console.log(add());
+           return add();
+          }
+
+        }); // end of equal btn listener
+
         }); // end of num btn listener
-        console.log(updateNumDisplay);
-        return updateNumDisplay;
+       // console.log(updateNumDisplay);
+        //return updateNumDisplay; // this returns only num1 + op no num2
+        
         }); // end of ops btn listener
+       // console.log(updateNumDisplay);
+       // return updateNumDisplay; this is undefined which is out of scope
+       
       }); // end of op btn for each
-      } // end of is
+      
+      } // end of if
     
     } // end of else
-    
+   
 }); // event listener end
 
 //console.log(updateNumDisplay); // not defined here so out of scope
@@ -283,50 +304,9 @@ pressNum();
 // store all the values and call the operate function with them.
 
 
-// need this funtion
-function pressOperand() {
-
-opBtns.forEach(opBtn => {
-
-  opBtn.addEventListener("click", (e) => {
-    
-    updateOpDisplay = displayBox.textContent = opBtn.textContent;
-  
-   // console.log(updateOpDisplay);
-    return updateOpDisplay;
-    
-  }); // event listener end
-  
-  
-  }); // for each loop end
-  
-  return opBtns;
-
-
-};
-
-pressOperand();
-//let opsPressed = pressOperand();
-//console.log(pressOperand());
-
-
-/* else {
-  if (displayBox.textContent = num1Txt) {
-   pressOperand();
-   
-    num2 = numBtn;
-    updateNumDisplay = displayBox.textContent = num1.textContent + opBtns;
-    console.log(updateNumDisplay);
-    return updateNumDisplay;
-  }
-  //return updateNumDisplay;
-} // end of else
-
-*/
-
-
+//const arrayNums = [num1Txt, num2Txt];
 // start calculation functions here
-
+/*
 const add = function([...arrayNums]) {
 	addBtn.textContent;
   //console.log(addBtn.textContent); shows
@@ -366,7 +346,11 @@ divideBtn.textContent;
   return divideNums;
 
 };
+*/
+
 /*
+console.log(add([num1, num2]));
+
 console.log(add([2, 4]));
 console.log(subtract([2, 4]));
 console.log(multiply([2, 4]));
@@ -376,48 +360,53 @@ console.log(divide([2, 4]));
 
 
 
-const operand = [add, subtract, multiply, divide]; 
+//const operand = [add, subtract, multiply, divide]; 
 //console.log(operand);
 // start operate here
-function operate([...operand]) {
+/*
+function operate() {
 
   equalsBtn.addEventListener("click", (e) => {
-    num1 = numbersPressed();
-    console.log(num1);
-    return operand;
+    
+    
   
   });
   
   
-   
-  
   };
 
- // console.log(operate([add([2, 4])])); // 
+  operate();
+*/
 
-//console.log(operate([subtract([2, 4])])); // 
-
-//console.log(operate([multiply([2, 4])])); // 
-
-//console.log(operate([divide([2, 4])])); // 
-
-/*
-function storeNumsPressed() {
-
-  num1 = numbersPressed;
-  //console.log(numbersPressed); // shows all numbers
-  console.log(numbersPressed);
-  console.log(num1);
-
-  //if (displayBox.textContent = "") {
-    
- // } else if (displayBox.textContent = numbersPressed) { //&& displayBox.textContent = opsPressed;
-   // console.log(numbersPressed);
-//}
-
+const add = function() {
+ // console.log(num1.textContent);
+ // console.log(num2.textContent);
+ // console.log(parseInt(num1.textContent));
+ // console.log(parseInt(num2.textContent));
+  return parseInt(num1.textContent) + parseInt(num2.textContent);
 };
 
-storeNumsPressed();
+/*
+  function calculate() {
+      
+let getDisplay = document.getElementById("display-box");
+
+//console.log(getDisplay);
+
+console.log(getDisplay.textContent.includes('+'));
 
 
-*/
+
+    if (getDisplay.textContent.includes('+')) {
+      console.log(add);
+     add;
+    } else {
+      return;
+    }
+    
+    return add;
+
+  };
+  calculate();
+
+  */
