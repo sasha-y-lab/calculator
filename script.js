@@ -232,8 +232,9 @@ numBtn.addEventListener("click", (e) => {
   // num1 = numBtn;
   num1 = e.target;
    // console.log(num1); is number pressed
-  let num1Txt = num1.textContent;
-  parseInt(num1Txt);
+  let num1Txt = parseInt(num1.textContent);
+  //num1.textContent = parseInt(num1Txt);
+  
   
   
     if (displayBox.textContent = "") {
@@ -254,14 +255,35 @@ numBtn.addEventListener("click", (e) => {
         numBtn.addEventListener("click", (e) => {
           //num2 = numBtn;
           num2 = e.target;
-          let num2Txt = num2.textContent;
-          parseInt(num2Txt);
+          let num2Txt = parseInt(num2.textContent);
+         // num2.textContent = parseInt(num2Txt);
           updateNumDisplay = displayBox.textContent = num1Txt + opBtn.textContent + num2Txt;
           console.log(updateNumDisplay);
-          return updateNumDisplay;
+          //return updateNumDisplay;
 //if (equalsBtn.onclick) {
-   /*       
+         
 equalsBtn.addEventListener ("click", (e) => {
+
+  const add = function() {
+    // console.log(num1.textContent);
+    // console.log(num2.textContent);
+    // console.log(parseInt(num1.textContent));
+    // console.log(parseInt(num2.textContent));
+     return num1Txt + num2Txt; //parseInt(num1Txt) + parseInt(num2Txt);
+   };
+   
+   const subtract = function() {
+      return num1Txt - num2Txt; //parseInt(num1Txt) - parseInt(num2Txt)
+    };
+   
+    const multiply = function() {
+     return num1Txt * num2Txt; //parseInt(num1Txt) * parseInt(num2Txt)
+   };
+   
+   const divide = function() {
+     return num1Txt / num2Txt; //parseInt(num1Txt) / parseInt(num2Txt)
+   };
+
   let getDisplay = document.getElementById("display-box");
 
           if (getDisplay.textContent.includes('+')) {
@@ -270,7 +292,7 @@ equalsBtn.addEventListener ("click", (e) => {
           } else if (getDisplay.textContent.includes('-')) {
             console.log(subtract());
            return subtract();
-          } else if (getDisplay.textContent.includes('*')) {
+          } else if (getDisplay.textContent.includes('x')) {
             console.log(multiply());
            return multiply();
           } else if (getDisplay.textContent.includes('/')) {
@@ -282,7 +304,7 @@ equalsBtn.addEventListener ("click", (e) => {
       
 
         }); // end of equal btn listener
-*/
+
      // } // end of if 
 
         }); // end of num btn listener
@@ -328,23 +350,5 @@ pressNum();
 
 
 
-const add = function() {
- // console.log(num1.textContent);
- // console.log(num2.textContent);
- // console.log(parseInt(num1.textContent));
- // console.log(parseInt(num2.textContent));
-  return parseInt(num1.textContent) + parseInt(num2.textContent);
-};
 
-const subtract = function() {
-   return parseInt(num1.textContent) - parseInt(num2.textContent);
- };
-
- const multiply = function() {
-  return parseInt(num1.textContent) * parseInt(num2.textContent);
-};
-
-const divide = function() {
-  return parseInt(num1.textContent) / parseInt(num2.textContent);
-};
  
