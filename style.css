@@ -22,3 +22,77 @@ body {
     flex: 1;
     
 }
+
+#display-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 400px;
+
+}
+
+#calc-box-main {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+    border-style: solid;
+    border-width: thick;
+    border-color: black; 
+}
+
+#operate-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 5px;
+    width: 400px;
+    height: 300px;
+    align-items: center;
+}
+
+#operate-section button {
+    width: 75px;
+    height: 75px;
+    font-size: larger;
+}
+
+
+#number-btn-box {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 300px;
+    justify-content: center;
+    
+}
+
+
+#operator-btn-box {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 100px;
+    justify-content: center;
+}
+
+
+
+button {
+    display: inline-block;
+}
+
+#other-section {
+display: flex;
+justify-content: center;
+align-items: center;
+    height: 100px;
+
+}
+
+#other-section button {
+    height: 30px;
+}
