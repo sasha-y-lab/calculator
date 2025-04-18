@@ -8,9 +8,9 @@ const arrayNums = [num1, num2];
 
 const add = function([...arrayNums]) {
 	
-    let addNums = arrayNums.reduce((total, currentItem) => {
+    let addNums = arrayNums.reduce((number, currentNum) => {
 
-        return total + currentItem;
+        return number + currentNum;
 
     });
     return addNums;
@@ -19,8 +19,8 @@ const add = function([...arrayNums]) {
 
 
 const subtract = function([...arrayNums]) {
-	let subtractNums = arrayNums.reduce((total, currentItem) => {
-        return total - currentItem;
+	let subtractNums = arrayNums.reduce((number, currentNum) => {
+        return number - currentNum;
       });
       return subtractNums;
 };
@@ -28,8 +28,8 @@ const subtract = function([...arrayNums]) {
 
 const multiply = function([...arrayNums]) {
 
-    let productOfNums = arrayNums.reduce((total, currentItem) => {
-      return total * currentItem;
+    let productOfNums = arrayNums.reduce((number, currentNum) => {
+      return number * currentNum;
     }, 1); // 1 needs to only be there for multiplication
     return productOfNums;
   
@@ -37,8 +37,8 @@ const multiply = function([...arrayNums]) {
 
   const divide = function([...arrayNums]) {
 
-    let divideNums = arrayNums.reduce((total, currentItem) => {
-      return total / currentItem;
+    let divideNums = arrayNums.reduce((number, currentNum) => {
+      return number / currentNum;
     });
     return divideNums;
   
@@ -67,8 +67,6 @@ function operate([...operand]) {
 
 
 return operand;
-    
- 
  
 
 };
@@ -112,19 +110,19 @@ const numBtnRow1 = document.createElement("div");
 numBtnRow1.setAttribute("id", "numbers-row1");
 
 const sevenBtn = document.createElement("button");
-sevenBtn.classList.add("seven-btn");
+sevenBtn.classList.add("seven-btn", "nums");
 sevenBtn.textContent = "7";
 
 numBtnRow1.appendChild(sevenBtn);
 
 const eightBtn = document.createElement("button");
-eightBtn.classList.add("eight-btn");
+eightBtn.classList.add("eight-btn", "nums");
 eightBtn.textContent = "8";
 
 numBtnRow1.appendChild(eightBtn);
 
 const nineBtn = document.createElement("button");
-nineBtn.classList.add("nine-btn");
+nineBtn.classList.add("nine-btn", "nums");
 nineBtn.textContent = "9";
 
 numBtnRow1.appendChild(nineBtn);
@@ -137,19 +135,19 @@ const numBtnRow2 = document.createElement("div");
 numBtnRow2.setAttribute("id", "numbers-row2");
 
 const fourBtn = document.createElement("button");
-fourBtn.classList.add("four-btn");
+fourBtn.classList.add("four-btn", "nums");
 fourBtn.textContent = "4";
 
 numBtnRow2.appendChild(fourBtn);
 
 const fiveBtn = document.createElement("button");
-fiveBtn.classList.add("five-btn");
+fiveBtn.classList.add("five-btn", "nums");
 fiveBtn.textContent = "5";
 
 numBtnRow2.appendChild(fiveBtn);
 
 const sixBtn = document.createElement("button");
-sixBtn.classList.add("six-btn");
+sixBtn.classList.add("six-btn", "nums");
 sixBtn.textContent = "6";
 
 numBtnRow2.appendChild(sixBtn);
@@ -162,19 +160,19 @@ const numBtnRow3 = document.createElement("div");
 numBtnRow3.setAttribute("id", "numbers-row3");
 
 const oneBtn = document.createElement("button");
-oneBtn.classList.add("one-btn");
+oneBtn.classList.add("one-btn", "nums");
 oneBtn.textContent = "1";
 
 numBtnRow3.appendChild(oneBtn);
 
 const twoBtn = document.createElement("button");
-twoBtn.classList.add("two-btn");
+twoBtn.classList.add("two-btn", "nums");
 twoBtn.textContent = "2";
 
 numBtnRow3.appendChild(twoBtn);
 
 const threeBtn = document.createElement("button");
-threeBtn.classList.add("three-btn");
+threeBtn.classList.add("three-btn", "nums");
 threeBtn.textContent = "3";
 
 numBtnRow3.appendChild(threeBtn);
@@ -189,7 +187,7 @@ const numBtnRow4 = document.createElement("div");
 numBtnRow4.setAttribute("id", "numbers-row4");
 
 const zeroBtn = document.createElement("button");
-zeroBtn.classList.add("zero-btn");
+zeroBtn.classList.add("zero-btn", "nums");
 zeroBtn.textContent = "0";
 
 numBtnRow4.appendChild(zeroBtn);
@@ -252,3 +250,66 @@ otherBtnsSection.appendChild(clearBtn);
 calculatorBox.appendChild(otherBtnsSection);
 
 container.appendChild(calculatorBox);
+
+
+// Create the functions that populate the display when you click the 
+// digit buttons. You should store the content of the display (the number)
+// in a variable for use in the next step.
+
+
+
+function pressNum() {
+
+let numBtns = document.querySelectorAll("#number-btn-box .nums");
+
+//console.log(numBtns); // all numbered buttons
+
+numBtns.forEach(numBtn => {
+
+numBtn.addEventListener("click", (e) => {
+  
+  let updateNumDisplay = displayBox.textContent = numBtn.textContent;
+
+  console.log(updatedDisplay);
+  return updateNumDisplay;
+  
+}); // event listener end
+
+
+}); // for each loop end
+
+return numBtns;
+
+
+};
+
+pressNum();
+// console.log(pressNum()); returns all numbered buttons
+
+/*
+function pressOperand() {
+
+  addBtn.addEventListener("click", (e) => {
+    displayBox.textContent = "+";
+    //return add;
+  });
+
+  subtractBtn.addEventListener("click", (e) => {
+
+    //return subtract;
+  });
+
+multiplyBtn.addEventListener("click", (e) => {
+
+  //return multiply;
+});
+
+divideBtn.addEventListener("click", (e) => {
+
+  //return divide;
+});
+
+};
+
+let operandPressed = pressOperand();
+*/
