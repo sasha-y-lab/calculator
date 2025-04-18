@@ -244,19 +244,17 @@ numBtn.addEventListener("click", (e) => {
         opBtn.addEventListener("click", (e) => {
         updateNumDisplay = displayBox.textContent = num1.textContent + opBtn.textContent;
         console.log(updateNumDisplay);
-
         numBtn.addEventListener("click", (e) => {
           num2 = numBtn;
           updateNumDisplay = displayBox.textContent = num1.textContent + opBtn.textContent + num2.textContent;
-
         return updateNumDisplay;
-
-        }); // end of number buttons listener
-return updateNumDisplay;
-        }); // end of listener ops buttons
-      }); // end of for each ops button
-      }// end of first if
-      //return updateNumDisplay;
+        }); // end of num btn listener
+        console.log(updateNumDisplay);
+        return updateNumDisplay;
+        }); // end of ops btn listener
+      }); // end of op btn for each
+      } // end of is
+    
     } // end of else
     
 }); // event listener end
@@ -285,7 +283,7 @@ pressNum();
 // store all the values and call the operate function with them.
 
 
-
+// need this funtion
 function pressOperand() {
 
 opBtns.forEach(opBtn => {
@@ -308,7 +306,7 @@ opBtns.forEach(opBtn => {
 };
 
 pressOperand();
-let opsPressed = pressOperand();
+//let opsPressed = pressOperand();
 //console.log(pressOperand());
 
 
