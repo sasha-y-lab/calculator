@@ -40,7 +40,19 @@ const multiply = function([...arrayNums]) {
   
   };
 
+  /*
 console.log(add([2, 4]));
 console.log(subtract([2, 4]));
 console.log(multiply([2, 4]));
 console.log(divide([2, 4]));
+
+*/
+
+// A calculator operation will consist of a number, an operator, and 
+// another number. For example, 3 + 5. Create three variables, one for 
+// each part of the operation. You’ll use these variables to update
+// your display later.
+
+let num1;
+let num2;
+let operand;
