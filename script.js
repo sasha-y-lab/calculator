@@ -217,8 +217,8 @@ let num2;
 
 let numBtns = document.querySelectorAll("#number-btn-box .nums");
 let opBtns = document.querySelectorAll("#operator-btn-box button");
-let updateNumDisplay;
-let num1Txt;
+//let updateNumDisplay = displayBox.textContent = "";
+//let num1Txt;
 
 numBtns.forEach(numBtn => {
 
@@ -229,6 +229,7 @@ numBtn.addEventListener("click", (e) => {
   switch(true) {
     case target.classList.contains('one-btn'):
       console.log('You pressed 1');
+      displayBox.textContent = oneBtn.textContent;
       
       opBtns.forEach(opBtn => {
 
@@ -239,18 +240,24 @@ numBtn.addEventListener("click", (e) => {
       switch(true) {
         case target.classList.contains('divide-btn'):
           console.log('You pressed divide');
+          displayBox.textContent = oneBtn.textContent + divideBtn.textContent;
+
+
           break;
 
           case target.classList.contains('multiply-btn'):
           console.log('You pressed multiply');
+          displayBox.textContent = oneBtn.textContent + multiplyBtn.textContent;
           break;
 
           case target.classList.contains('add-btn'):
             console.log('You pressed add');
+            displayBox.textContent = oneBtn.textContent + addBtn.textContent;
             break;
 
             case target.classList.contains('subtract-btn'):
           console.log('You pressed subtact');
+          displayBox.textContent = oneBtn.textContent + subtractBtn.textContent;
           break;
 
         }
@@ -263,6 +270,7 @@ numBtn.addEventListener("click", (e) => {
     
     case target.classList.contains('two-btn'):
        console.log('You pressed 2');
+       displayBox.textContent = twoBtn.textContent;
 
        opBtns.forEach(opBtn => {
 
@@ -273,18 +281,22 @@ numBtn.addEventListener("click", (e) => {
       switch(true) {
         case target.classList.contains('divide-btn'):
           console.log('You pressed divide');
+          displayBox.textContent = twoBtn.textContent + divideBtn.textContent;
           break;
 
           case target.classList.contains('multiply-btn'):
           console.log('You pressed multiply');
+          displayBox.textContent = twoBtn.textContent + multiplyBtn.textContent;
           break;
 
           case target.classList.contains('add-btn'):
             console.log('You pressed add');
+            displayBox.textContent = twoBtn.textContent + addBtn.textContent;
             break;
 
             case target.classList.contains('subtract-btn'):
           console.log('You pressed subtact');
+          displayBox.textContent = twoBtn.textContent + subtractBtn.textContent;
           break;
 
         }
@@ -297,6 +309,8 @@ numBtn.addEventListener("click", (e) => {
     case target.classList.contains('three-btn'):
     console.log('You pressed 3');
 
+    displayBox.textContent = threeBtn.textContent;
+
     opBtns.forEach(opBtn => {
 
 
@@ -306,18 +320,22 @@ numBtn.addEventListener("click", (e) => {
     switch(true) {
       case target.classList.contains('divide-btn'):
         console.log('You pressed divide');
+        displayBox.textContent = threeBtn.textContent + divideBtn.textContent;
         break;
 
         case target.classList.contains('multiply-btn'):
         console.log('You pressed multiply');
+        displayBox.textContent = threeBtn.textContent + multiplyBtn.textContent;
         break;
 
         case target.classList.contains('add-btn'):
           console.log('You pressed add');
+          displayBox.textContent = threeBtn.textContent + addBtn.textContent;
           break;
 
           case target.classList.contains('subtract-btn'):
         console.log('You pressed subtact');
+        displayBox.textContent = threeBtn.textContent + subtractBtn.textContent;
         break;
 
       }
@@ -329,6 +347,7 @@ numBtn.addEventListener("click", (e) => {
 
     case target.classList.contains('four-btn'):
       console.log('You pressed 4');
+      displayBox.textContent = fourBtn.textContent;
 
       opBtns.forEach(opBtn => {
 
@@ -339,18 +358,22 @@ numBtn.addEventListener("click", (e) => {
       switch(true) {
         case target.classList.contains('divide-btn'):
           console.log('You pressed divide');
+          displayBox.textContent = fourBtn.textContent + divideBtn.textContent;
           break;
 
           case target.classList.contains('multiply-btn'):
           console.log('You pressed multiply');
+          displayBox.textContent = fourBtn.textContent + multiplyBtn.textContent;
           break;
 
           case target.classList.contains('add-btn'):
             console.log('You pressed add');
+            displayBox.textContent = fourBtn.textContent + addBtn.textContent;
             break;
 
             case target.classList.contains('subtract-btn'):
           console.log('You pressed subtact');
+          displayBox.textContent = fourBtn.textContent + subtractBtn.textContent;
           break;
 
         }
@@ -362,6 +385,7 @@ numBtn.addEventListener("click", (e) => {
     
     case target.classList.contains('five-btn'):
        console.log('You pressed 5');
+       displayBox.textContent = fiveBtn.textContent;
 
        opBtns.forEach(opBtn => {
 
@@ -372,18 +396,22 @@ numBtn.addEventListener("click", (e) => {
       switch(true) {
         case target.classList.contains('divide-btn'):
           console.log('You pressed divide');
+          displayBox.textContent = fiveBtn.textContent + divideBtn.textContent;
           break;
 
           case target.classList.contains('multiply-btn'):
           console.log('You pressed multiply');
+          displayBox.textContent = fiveBtn.textContent + multiplyBtn.textContent;
           break;
 
           case target.classList.contains('add-btn'):
             console.log('You pressed add');
+            displayBox.textContent = fiveBtn.textContent + addBtn.textContent;
             break;
 
             case target.classList.contains('subtract-btn'):
           console.log('You pressed subtact');
+          displayBox.textContent = fiveBtn.textContent + subtractBtn.textContent;
           break;
 
         }
@@ -395,6 +423,7 @@ numBtn.addEventListener("click", (e) => {
        
     case target.classList.contains('six-btn'):
     console.log('You pressed 6');
+    displayBox.textContent = sixBtn.textContent;
 
     opBtns.forEach(opBtn => {
 
@@ -405,18 +434,22 @@ numBtn.addEventListener("click", (e) => {
     switch(true) {
       case target.classList.contains('divide-btn'):
         console.log('You pressed divide');
+        displayBox.textContent = sixBtn.textContent + divideBtn.textContent;
         break;
 
         case target.classList.contains('multiply-btn'):
         console.log('You pressed multiply');
+        displayBox.textContent = sixBtn.textContent + multiplyBtn.textContent;
         break;
 
         case target.classList.contains('add-btn'):
           console.log('You pressed add');
+          displayBox.textContent = sixBtn.textContent + addBtn.textContent;
           break;
 
           case target.classList.contains('subtract-btn'):
         console.log('You pressed subtact');
+        displayBox.textContent = sixBtn.textContent + subtractBtn.textContent;
         break;
 
       }
@@ -428,6 +461,7 @@ numBtn.addEventListener("click", (e) => {
 
     case target.classList.contains('seven-btn'):
       console.log('You pressed 7');
+      displayBox.textContent = sevenBtn.textContent;
 
       opBtns.forEach(opBtn => {
 
@@ -438,18 +472,22 @@ numBtn.addEventListener("click", (e) => {
       switch(true) {
         case target.classList.contains('divide-btn'):
           console.log('You pressed divide');
+          displayBox.textContent = sevenBtn.textContent + divideBtn.textContent;
           break;
 
           case target.classList.contains('multiply-btn'):
           console.log('You pressed multiply');
+          displayBox.textContent = sevenBtn.textContent + multiplyBtn.textContent;
           break;
 
           case target.classList.contains('add-btn'):
             console.log('You pressed add');
+            displayBox.textContent = sevenBtn.textContent + addBtn.textContent;
             break;
 
             case target.classList.contains('subtract-btn'):
           console.log('You pressed subtact');
+          displayBox.textContent = sevenBtn.textContent + subtractBtn.textContent;
           break;
 
         }
@@ -460,7 +498,7 @@ numBtn.addEventListener("click", (e) => {
               break;
     
     case target.classList.contains('eight-btn'):
-       console.log('You pressed 8');
+       console.log('You pressed 8');eightBtn.textContent;
 
        opBtns.forEach(opBtn => {
 
@@ -471,18 +509,22 @@ numBtn.addEventListener("click", (e) => {
       switch(true) {
         case target.classList.contains('divide-btn'):
           console.log('You pressed divide');
+          displayBox.textContent = eightBtn.textContent + divideBtn.textContent;
           break;
 
           case target.classList.contains('multiply-btn'):
           console.log('You pressed multiply');
+          displayBox.textContent = eightBtn.textContent + multiplyBtn.textContent;
           break;
 
           case target.classList.contains('add-btn'):
             console.log('You pressed add');
+            displayBox.textContent = eightBtn.textContent + addBtn.textContent;
             break;
 
             case target.classList.contains('subtract-btn'):
           console.log('You pressed subtact');
+          displayBox.textContent = eightBtn.textContent + subtractBtn.textContent;
           break;
 
         }
@@ -494,6 +536,7 @@ numBtn.addEventListener("click", (e) => {
        
     case target.classList.contains('nine-btn'):
     console.log('You pressed 9');
+    displayBox.textContent = nineBtn.textContent;
 
     opBtns.forEach(opBtn => {
 
@@ -504,18 +547,22 @@ numBtn.addEventListener("click", (e) => {
     switch(true) {
       case target.classList.contains('divide-btn'):
         console.log('You pressed divide');
+        displayBox.textContent = nineBtn.textContent + divideBtn.textContent;
         break;
 
         case target.classList.contains('multiply-btn'):
         console.log('You pressed multiply');
+        displayBox.textContent = nineBtn.textContent + multiplyBtn.textContent;
         break;
 
         case target.classList.contains('add-btn'):
           console.log('You pressed add');
+          displayBox.textContent = nineBtn.textContent + addBtn.textContent;
           break;
 
           case target.classList.contains('subtract-btn'):
         console.log('You pressed subtact');
+        displayBox.textContent = nineBtn.textContent + subtractBtn.textContent;
         break;
 
       }
@@ -527,6 +574,7 @@ numBtn.addEventListener("click", (e) => {
 
     case target.classList.contains('zero-btn'):
     console.log('You pressed 0');
+    displayBox.textContent = zeroBtn.textContent;
 
     opBtns.forEach(opBtn => {
 
@@ -537,18 +585,22 @@ numBtn.addEventListener("click", (e) => {
     switch(true) {
       case target.classList.contains('divide-btn'):
         console.log('You pressed divide');
+        displayBox.textContent = zeroBtn.textContent + divideBtn.textContent;
         break;
 
         case target.classList.contains('multiply-btn'):
         console.log('You pressed multiply');
+        displayBox.textContent = zeroBtn.textContent + multiplyBtn.textContent;
         break;
 
         case target.classList.contains('add-btn'):
           console.log('You pressed add');
+          displayBox.textContent = zeroBtn.textContent + addBtn.textContent;
           break;
 
           case target.classList.contains('subtract-btn'):
         console.log('You pressed subtact');
+        displayBox.textContent = zeroBtn.textContent + subtractBtn.textContent;
         break;
 
       }
