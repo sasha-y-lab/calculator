@@ -218,440 +218,501 @@ let num2;
 let numBtns = document.querySelectorAll("#number-btn-box .nums");
 let opBtns = document.querySelectorAll("#operator-btn-box button");
 let updateNumDisplay;
+let num1Txt;
+
+numBtns.forEach(numBtn => {
+
+
+numBtn.addEventListener("click", (e) => {
+  let target = e.target;
+
+  switch(true) {
+    case target.classList.contains('one-btn'):
+      console.log('You pressed 1');
+      
+      opBtns.forEach(opBtn => {
+
+
+        opBtn.addEventListener("click", (e) => {
+          let target = e.target;
+      
+      switch(true) {
+        case target.classList.contains('divide-btn'):
+          console.log('You pressed divide');
+          break;
+
+          case target.classList.contains('multiply-btn'):
+          console.log('You pressed multiply');
+          break;
+
+          case target.classList.contains('add-btn'):
+            console.log('You pressed add');
+            break;
+
+            case target.classList.contains('subtract-btn'):
+          console.log('You pressed subtact');
+          break;
+
+        }
+
+      }); // end of op btn listener
+    }); // end of op btn loop
+
+
+              break;
+    
+    case target.classList.contains('two-btn'):
+       console.log('You pressed 2');
+
+       opBtns.forEach(opBtn => {
+
+
+        opBtn.addEventListener("click", (e) => {
+          let target = e.target;
+      
+      switch(true) {
+        case target.classList.contains('divide-btn'):
+          console.log('You pressed divide');
+          break;
+
+          case target.classList.contains('multiply-btn'):
+          console.log('You pressed multiply');
+          break;
+
+          case target.classList.contains('add-btn'):
+            console.log('You pressed add');
+            break;
+
+            case target.classList.contains('subtract-btn'):
+          console.log('You pressed subtact');
+          break;
+
+        }
+
+      }); // end of op btn listener
+    }); // end of op btn loop
+
+       break;
+       
+    case target.classList.contains('three-btn'):
+    console.log('You pressed 3');
+
+    opBtns.forEach(opBtn => {
+
+
+      opBtn.addEventListener("click", (e) => {
+        let target = e.target;
+    
+    switch(true) {
+      case target.classList.contains('divide-btn'):
+        console.log('You pressed divide');
+        break;
+
+        case target.classList.contains('multiply-btn'):
+        console.log('You pressed multiply');
+        break;
+
+        case target.classList.contains('add-btn'):
+          console.log('You pressed add');
+          break;
+
+          case target.classList.contains('subtract-btn'):
+        console.log('You pressed subtact');
+        break;
+
+      }
+
+    }); // end of op btn listener
+  }); // end of op btn loop
+
+    break;
+
+    case target.classList.contains('four-btn'):
+      console.log('You pressed 4');
+
+      opBtns.forEach(opBtn => {
+
+
+        opBtn.addEventListener("click", (e) => {
+          let target = e.target;
+      
+      switch(true) {
+        case target.classList.contains('divide-btn'):
+          console.log('You pressed divide');
+          break;
+
+          case target.classList.contains('multiply-btn'):
+          console.log('You pressed multiply');
+          break;
+
+          case target.classList.contains('add-btn'):
+            console.log('You pressed add');
+            break;
+
+            case target.classList.contains('subtract-btn'):
+          console.log('You pressed subtact');
+          break;
+
+        }
+
+      }); // end of op btn listener
+    }); // end of op btn loop
+
+              break;
+    
+    case target.classList.contains('five-btn'):
+       console.log('You pressed 5');
+
+       opBtns.forEach(opBtn => {
+
+
+        opBtn.addEventListener("click", (e) => {
+          let target = e.target;
+      
+      switch(true) {
+        case target.classList.contains('divide-btn'):
+          console.log('You pressed divide');
+          break;
+
+          case target.classList.contains('multiply-btn'):
+          console.log('You pressed multiply');
+          break;
+
+          case target.classList.contains('add-btn'):
+            console.log('You pressed add');
+            break;
+
+            case target.classList.contains('subtract-btn'):
+          console.log('You pressed subtact');
+          break;
+
+        }
+
+      }); // end of op btn listener
+    }); // end of op btn loop
+
+       break;
+       
+    case target.classList.contains('six-btn'):
+    console.log('You pressed 6');
+
+    opBtns.forEach(opBtn => {
+
+
+      opBtn.addEventListener("click", (e) => {
+        let target = e.target;
+    
+    switch(true) {
+      case target.classList.contains('divide-btn'):
+        console.log('You pressed divide');
+        break;
+
+        case target.classList.contains('multiply-btn'):
+        console.log('You pressed multiply');
+        break;
+
+        case target.classList.contains('add-btn'):
+          console.log('You pressed add');
+          break;
+
+          case target.classList.contains('subtract-btn'):
+        console.log('You pressed subtact');
+        break;
+
+      }
+
+    }); // end of op btn listener
+  }); // end of op btn loop
+
+    break;
+
+    case target.classList.contains('seven-btn'):
+      console.log('You pressed 7');
+
+      opBtns.forEach(opBtn => {
+
+
+        opBtn.addEventListener("click", (e) => {
+          let target = e.target;
+      
+      switch(true) {
+        case target.classList.contains('divide-btn'):
+          console.log('You pressed divide');
+          break;
+
+          case target.classList.contains('multiply-btn'):
+          console.log('You pressed multiply');
+          break;
+
+          case target.classList.contains('add-btn'):
+            console.log('You pressed add');
+            break;
+
+            case target.classList.contains('subtract-btn'):
+          console.log('You pressed subtact');
+          break;
+
+        }
+
+      }); // end of op btn listener
+    }); // end of op btn loop
+
+              break;
+    
+    case target.classList.contains('eight-btn'):
+       console.log('You pressed 8');
+
+       opBtns.forEach(opBtn => {
+
+
+        opBtn.addEventListener("click", (e) => {
+          let target = e.target;
+      
+      switch(true) {
+        case target.classList.contains('divide-btn'):
+          console.log('You pressed divide');
+          break;
+
+          case target.classList.contains('multiply-btn'):
+          console.log('You pressed multiply');
+          break;
+
+          case target.classList.contains('add-btn'):
+            console.log('You pressed add');
+            break;
+
+            case target.classList.contains('subtract-btn'):
+          console.log('You pressed subtact');
+          break;
+
+        }
+
+      }); // end of op btn listener
+    }); // end of op btn loop
+
+       break;
+       
+    case target.classList.contains('nine-btn'):
+    console.log('You pressed 9');
+
+    opBtns.forEach(opBtn => {
+
+
+      opBtn.addEventListener("click", (e) => {
+        let target = e.target;
+    
+    switch(true) {
+      case target.classList.contains('divide-btn'):
+        console.log('You pressed divide');
+        break;
+
+        case target.classList.contains('multiply-btn'):
+        console.log('You pressed multiply');
+        break;
+
+        case target.classList.contains('add-btn'):
+          console.log('You pressed add');
+          break;
+
+          case target.classList.contains('subtract-btn'):
+        console.log('You pressed subtact');
+        break;
+
+      }
+
+    }); // end of op btn listener
+  }); // end of op btn loop
+
+    break;
+
+    case target.classList.contains('zero-btn'):
+    console.log('You pressed 0');
+
+    opBtns.forEach(opBtn => {
+
+
+      opBtn.addEventListener("click", (e) => {
+        let target = e.target;
+    
+    switch(true) {
+      case target.classList.contains('divide-btn'):
+        console.log('You pressed divide');
+        break;
+
+        case target.classList.contains('multiply-btn'):
+        console.log('You pressed multiply');
+        break;
+
+        case target.classList.contains('add-btn'):
+          console.log('You pressed add');
+          break;
+
+          case target.classList.contains('subtract-btn'):
+        console.log('You pressed subtact');
+        break;
+
+      }
+
+    }); // end of op btn listener
+  }); // end of op btn loop
+
+    break;
+
+
+        }
+    
+
+});
+
+}); // end of num btn loop
 
 
 
 
+/*
 
 function pressNum() {
 
- 
 
+
+
+  
 //console.log(numBtns); // all numbered buttons
 
 numBtns.forEach(numBtn => {
 
-numBtn.addEventListener("click", (e) => {
-  // num1 = numBtn;
- let newNumBtn = e.target;
+  numBtn.addEventListener("click", (e) => {
+    num1 = e.target;
+    
+    //num1 = e.target;
+    console.log(num1); //is number pressed
+    num1Txt = num1.textContent;
+  
+  
+  
+    if (displayBox.textContent = "") {
+   
 
-  num1 = newNumBtn;
 
-  newNumBtn = num1;
-
-  let num1Txt = num1.textContent;
-   // console.log(num1); is number pressed
-  
-  //num1.textContent = parseInt(num1Txt);
-  
-  
-  
-    if (displayBox.textContent === "") {
-      num1Txt = num1.textContent;
   updateNumDisplay = displayBox.textContent = num1Txt;
- // console.log(updateNumDisplay);
-  return updateNumDisplay;
-    } else {
+  console.log(updateNumDisplay);
+ // return { updateNumDisplay, num1, num1Txt };
 
-      opBtns.forEach(opBtn => {
+
+    } 
+    
+    else {
+
+      console.log(displayBox.textContent = num1Txt);
+        opBtns.forEach(opBtn => {
         opBtn.addEventListener("click", (e) => {
-        let newOpBtn = e.target;
-          let opBtnTxt = newOpBtn.textContent;
-
-      if (newOpBtn === e.target && displayBox.textContent === num1Txt) {
-        num1Txt = num1.textContent;
-
-        updateNumDisplay = displayBox.textContent = num1Txt + opBtnTxt;
+            
+      if (displayBox.textContent = num1Txt) {
+       // console.log(num1Txt); // still num1
+        
+        updateNumDisplay = displayBox.textContent = num1Txt + opBtn.textContent;
         console.log(updateNumDisplay);
+       // console.log(num1Txt); // still num1
+
         
-       return updateNumDisplay;
-           
 
-        }
+        if (displayBox.textContent = num1Txt + opBtn.textContent) {
         
-       else {
+// num1Txt = num1.textContent;
+     //console.log(num1Txt); // num 1 still
+
+     numBtns.forEach(numBtn => {
+         
+      numBtn.addEventListener("click", (e) => {
         
-        if (newOpBtn === e.target && displayBox.textContent === num1Txt + opBtnTxt) {
-          num1Txt = num1.textContent;
-          opBtnTxt = newOpBtn.textContent;
+        console.log(num1Txt);
+        num2 = new e.target;
+        console.log(num2);
+        let num2Txt = num2.textContent;
+        
+        console.log(num1Txt); // comes out as num2
 
-          numBtns.forEach(numBtn => {
-        numBtn.addEventListener("click", (e) => {
-          //num2 = numBtn;
-          let newNumBtn2 = e.target;
-          num2 = newNumBtn2;
-
-          newNumBtn2 = num2;
-
-          let num2Txt = num2.textContent;
-         // num2.textContent = parseInt(num2Txt);
-          updateNumDisplay = displayBox.textContent = num1Txt + opBtnTxt + num2Txt;
+          updateNumDisplay = displayBox.textContent = num1Txt + opBtn.textContent + num2Txt;
           console.log(updateNumDisplay);
           //return updateNumDisplay;
 //if (equalsBtn.onclick) {
+
+const add = function() {
+ // console.log(num1.textContent);
+ // console.log(num2.textContent);
+ // console.log(parseInt(num1.textContent));
+ // console.log(parseInt(num2.textContent));
+  return parseInt(num1.textContent) + parseInt(num2.textContent); //parseInt(num1Txt) + parseInt(num2Txt);
+};
+
          
-
-
-
-if (displayBox.textContent === num1Txt + newOpBtn.textContent + num2Txt) {
-
 equalsBtn.addEventListener ("click", (e) => {
 
-  //let calculate = e.target;
-
- // console.log(calculate);
-
-  if (equalsBtn === e.target) {
+  
 
   let getDisplay = document.getElementById("display-box");
 
-  
           if (getDisplay.textContent.includes('+')) {
             console.log(add());
-            add();
-          let num1Txt2 = add();
+            num1.textContent = add();
+            console.log(displayBox.textContent = num1.textContent);
+           return displayBox.textContent = num1.textContent;
 
-          num1 = num1Txt2;
-
-          num1Txt2 = num1;
-
-
-
-          // let num1Txt2 = num1Txt;
-
-            // let stringNum1 = num1.toString();
-           // console.log(stringNum1);
-           console.log(num1Txt2);
-           // console.log(displayBox.textContent = add());
-          updateNumDisplay = displayBox.textContent = num1Txt2;
-          console.log(updateNumDisplay);
-         // return updateNumDisplay;
-
-         
-
-             if (displayBox.textContent === num1Txt2) {
-             // num1 = add();
-              num1Txt2 = add();
-
-              opBtns.forEach(opBtn => {
-                opBtn.addEventListener("click", (e) => {   
-                  
-                 let opBtnTxt2 = opBtn.textContent;
-
-updateNumDisplay = displayBox.textContent = num1Txt2 + opBtnTxt2;
-console.log(updateNumDisplay);
-return updateNumDisplay;
-
-                }); // end listener for now
-              }); //end loop for now
-            } //end if for now
-    /*
-
-     if (displayBox.textContent = newNum1 + newOpBtn.textContent) {
-        
-        numBtns.forEach(numBtn => {
-          numBtn.addEventListener("click", (e) => {
-        newNum2 = e.target;
-        let newNum2Txt = parseInt(newNum2);
-
-        updateNumDisplay = displayBox.textContent = newNum1 + newOpBtn.textContent + newNum2Txt;
-        console.log(updateNumDisplay);
-        return updateNumDisplay;
-
-      }); // end of listener number btn
-    }); // end of num btn for loop
-
-      } // nest if statement end
-
-    }); // op btn listener
-  }); // op btn for each loop
-
-
-
-             } // end of if statement
-  
-            } // end of other if statement
-   
-
-           else if (getDisplay.textContent.includes('-')) {
+          } else if (getDisplay.textContent.includes('-')) {
             console.log(subtract());
-            subtract();
-            newNum1 = subtract();
-
-            
-           console.log(newNum1);
-           
-          updateNumDisplay = displayBox.textContent = newNum1;
-          console.log(updateNumDisplay);
-
-          
-
-             if (displayBox.textContent === newNum1) {
-              
-              opBtns.forEach(opBtn => {
-                opBtn.addEventListener("click", (e) => {
-    
-                 let newOpBtn = e.target;
-                 let newOpBtnTxt = newOpBtn.textContent;
-              
-
-updateNumDisplay = displayBox.textContent = newNum1 + newOpBtnTxt;
-console.log(updateNumDisplay);
-//return updateNumDisplay;
-
-
-    
-
-     if (displayBox.textContent = newNum1 + newOpBtn.textContent) {
-        
-        numBtns.forEach(numBtn => {
-          numBtn.addEventListener("click", (e) => {
-        newNum2 = e.target;
-        let newNum2Txt = parseInt(newNum2);
-
-        updateNumDisplay = displayBox.textContent = newNum1 + newOpBtn.textContent + newNum2Txt;
-        console.log(updateNumDisplay);
-        return updateNumDisplay;
-
-      }); // end of listener number btn
-    }); // end of num btn for loop
-
-      } // nest if statement end
-
-    }); // op btn listener
-  }); // op btn for each loop
-
-
-
-             } // end of if statement
-  
-            } // end of other if statement
-
-
-           else if (getDisplay.textContent.includes('x')) {
+           return subtract();
+          } else if (getDisplay.textContent.includes('x')) {
             console.log(multiply());
-            multiply();
-            newNum1 = multiply();
-
-            
-           console.log(newNum1);
-           
-          updateNumDisplay = displayBox.textContent = newNum1;
-          console.log(updateNumDisplay);
-
-          
-
-             if (displayBox.textContent === newNum1) {
-              
-              opBtns.forEach(opBtn => {
-                opBtn.addEventListener("click", (e) => {
-    
-                 let newOpBtn = e.target;
-                 let newOpBtnTxt = newOpBtn.textContent;
-              
-
-updateNumDisplay = displayBox.textContent = newNum1 + newOpBtnTxt;
-console.log(updateNumDisplay);
-//return updateNumDisplay;
-
-
-    
-
-     if (displayBox.textContent = newNum1 + newOpBtn.textContent) {
-        
-        numBtns.forEach(numBtn => {
-          numBtn.addEventListener("click", (e) => {
-        newNum2 = e.target;
-        let newNum2Txt = parseInt(newNum2);
-
-        updateNumDisplay = displayBox.textContent = newNum1 + newOpBtn.textContent + newNum2Txt;
-        console.log(updateNumDisplay);
-        return updateNumDisplay;
-
-      }); // end of listener number btn
-    }); // end of num btn for loop
-
-      } // nest if statement end
-
-    }); // op btn listener
-  }); // op btn for each loop
-
-
-
-             } // end of if statement
-  
-            } // end of other if statement
-
-
-
-          else if (getDisplay.textContent.includes('/')) {
+           return multiply();
+          } else if (getDisplay.textContent.includes('/')) {
             console.log(divide());
-            divide();
-            newNum1 = divide();
-
-            
-           console.log(newNum1);
-           
-          updateNumDisplay = displayBox.textContent = newNum1;
-          console.log(updateNumDisplay);
-
-          
-
-             if (displayBox.textContent === newNum1) {
-              
-              opBtns.forEach(opBtn => {
-                opBtn.addEventListener("click", (e) => {
-    
-                 let newOpBtn = e.target;
-                 let newOpBtnTxt = newOpBtn.textContent;
-              
-
-updateNumDisplay = displayBox.textContent = newNum1 + newOpBtnTxt;
-console.log(updateNumDisplay);
-//return updateNumDisplay;
-
-
-    
-
-     if (displayBox.textContent = newNum1 + newOpBtn.textContent) {
-        
-        numBtns.forEach(numBtn => {
-          numBtn.addEventListener("click", (e) => {
-        newNum2 = e.target;
-        let newNum2Txt = parseInt(newNum2);
-
-        updateNumDisplay = displayBox.textContent = newNum1 + newOpBtn.textContent + newNum2Txt;
-        console.log(updateNumDisplay);
-        return updateNumDisplay;
-
-      }); // end of listener number btn
-    }); // end of num btn for loop
-
-      } // nest if statement end
-
-    }); // op btn listener
-  }); // op btn for each loop
-
-
-
-             } // end of if statement
-
-          
-  
-            } // end of other if statement
-
-           else {
+           return divide();
+          } else {
             return;
           }
-
-          */
-
-        //  console.log(updateNumDisplay);
-         // return updateNumDisplay;
       
-} // end of if for now
-
-console.log(updateNumDisplay);
-return updateNumDisplay;
-  } // end of if
-
-  console.log(updateNumDisplay);
-  return updateNumDisplay;
 
         }); // end of equal btn listener
 
-} // end of if 
-
-     // } // end of if 
-
-        }); // end of num btn listener
        // console.log(updateNumDisplay);
-        //return updateNumDisplay; // this returns only num1 + op no num2
+    // return updateNumDisplay;
 
-    
+  }); // end of num btn listener
+  // console.log(updateNumDisplay);
+   //return updateNumDisplay; // this returns only num1 + op no num2
+ }); // end of num btn for each loop
 
-      }); // end of num btn for each loop
-
-      console.log(updateNumDisplay);
-      return updateNumDisplay;
-
+       
       } // end of if inside for num btn 2
+        
+   
 
+      } // end of if
+    
+    }); // end of ops btn listener
+    // console.log(updateNumDisplay);
+    // return updateNumDisplay; this is undefined which is out of scope
+    
+   }); // end of op btn for each
+      
     } // end of else
-      
-     //   }); // end of ops btn listener
-       // console.log(updateNumDisplay);
-       // return updateNumDisplay; //this is undefined which is out of scope
-       
-
-       
-    //  }); // end of op btn for each
-      
-
-      
-     // } // end of if
-
-      /*
-      else if (displayBox.textContent === num1) {
-displayBox.textContent = num1 + opBtn.textContent + num2;
-      } else {
-        return;
-      }
-      */
-    }); //end of op button listener
-  }); // end of op button loop
+   
   
     
-    } // end of else
+  }); // event listener end
 
-    
-   
-}); // event listener end
+  //console.log(updateNumDisplay); // not defined here so out of scope
+  
+  }); // for each loop end
 
-//console.log(updateNumDisplay); // not defined here so out of scope
+return numBtns;
 
-
-
-}); // for each loop end
-
-
-
-
-//return numBtns;
-//console.log(updateNumDisplay);
-//return updateNumDisplay; out of scope
 
 };
 
 pressNum();
-//let numbersPressed = pressNum();
-// console.log(pressNum()); returns all numbered buttons
 
 
-const add = function() {
-  // console.log(num1.textContent);
- //  console.log(num2.textContent);
- //  console.log(parseInt(num1.textContent));
-  // console.log(parseInt(num2.textContent));
-   return num1.textContent + num2.textContent; //parseInt(num1Txt) + parseInt(num2Txt);
- };
- 
- /*
- const subtract = function() {
-    return parseInt(num1.textContent) - parseInt(num2.textContent); //parseInt(num1Txt) - parseInt(num2Txt)
-  };
- 
-  const multiply = function() {
-   return parseInt(num1.textContent) * parseInt(num2.textContent); //parseInt(num1Txt) * parseInt(num2Txt)
- };
- 
- const divide = function() {
-   return parseInt(num1.textContent) / parseInt(num2.textContent); //parseInt(num1Txt) / parseInt(num2Txt)
- };
 */
-
-
-
-
 
  
