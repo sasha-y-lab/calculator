@@ -2,38 +2,6 @@
 
 
 
-
-
-/*
-console.log(add([2, 4]));
-console.log(subtract([2, 4]));
-console.log(multiply([2, 4]));
-console.log(divide([2, 4]));
-*/
-
-
-
-
-
-// Create a new function operate that takes an operator and two numbers 
-// and then calls one of the above functions on the numbers.
-/*
-function operate([...operand]) {
-
-  return operand; 
-
-};
-//operate([add([2, 4])]);
-//console.log(operate([add([2, 4])])); // prints 6
-
-//console.log(operate([subtract([2, 4])])); // -2 // yes works
-
-//console.log(operate([multiply([2, 4])])); // 8 // yes works
-
-//console.log(operate([divide([2, 4])])); // .5 // yes works
-
-*/
-
 // Create a basic HTML calculator with buttons for each digit and operator (including =).
 // There should also be a display for the calculator. 
 // add clear button
@@ -210,178 +178,88 @@ container.appendChild(calculatorBox);
 // digit buttons. You should store the content of the display (the number)
 // in a variable for use in the next step.
 
-
-let divideResult;
-
-
-
-let numBtns = document.querySelectorAll("#number-btn-box .nums");
-let opBtns = document.querySelectorAll("#operator-btn-box button");
-
-
-let numTarget;
-
-
 let num1 = "";
 let num2 = "";
-
-let currentInput = "";
+let result = "";
 let operator = "";
-
-let resultDisplayed = false;
-
-numBtns.forEach(numBtn => {
+let isSecondNumber = false;
 
 
-numBtn.addEventListener("click", (e) => {
-  numTarget = e.target;
+const numBtns = document.querySelectorAll("#number-btn-box .nums");
+const opBtns = document.querySelectorAll("#operator-btn-box button");
 
-  //reset calcultor if result is there
-if (resultDisplayed) {
-currentInput = "";
-num1 = "";
-num2 = "";
-operator = "";
-resultDisplayed = false;
 
+function updateDisplay(content) {
+  displayBox.textContent = content;
 }
 
-  switch(true) {
+// Handle number input
+numBtns.forEach(numBtn => {
+  numBtn.addEventListener("click", () => {
+    const value = numBtn.textContent;
 
-    case numTarget.classList.contains('one-btn'):
-      console.log('You pressed 1');
-      currentInput += "1";
-      
-      break;
-      
-     
-    case numTarget.classList.contains('two-btn'):
-       console.log('You pressed 2');
-       currentInput += "2";
-       
-break;
-       
-    case numTarget.classList.contains('three-btn'):
-    console.log('You pressed 3');
-    currentInput += "3";
-    
-    break;
-
-
-    case numTarget.classList.contains('four-btn'):
-      console.log('You pressed 4');
-      currentInput += "4";
-break;
-      
-    
-    case numTarget.classList.contains('five-btn'):
-       console.log('You pressed 5');
-       currentInput += "5";
-       break;
-
-       
-       
-    case numTarget.classList.contains('six-btn'):
-    console.log('You pressed 6');
-    currentInput += "6";
-    break;
-
-    case numTarget.classList.contains('seven-btn'):
-      console.log('You pressed 7');
-      currentInput += "7";
- break;
-    
-    case numTarget.classList.contains('eight-btn'):
-       console.log('You pressed 8');eightBtn.textContent;
-       currentInput += "8";
-       break;
-       
-    case numTarget.classList.contains('nine-btn'):
-    console.log('You pressed 9');
-    currentInput += "9";
-    break;
-
-    case numTarget.classList.contains('zero-btn'):
-    console.log('You pressed 0');
-    currentInput += "0";
-break;
-
-  }    
-
-  updateDisplay(currentInput);
-
-    }); // end of num btn listener
-  }); // end of num btn loop
-
-  
-  opBtns.forEach(opBtn => {
-
-
-    opBtn.addEventListener("click", (e) => {
-      let opTarget = e.target;
-  
-  switch(true) {
-    case opTarget.classList.contains('divide-btn'):
-      console.log('You pressed divide');
-      operator = "/";
-      
-      break;
-
-      case opTarget.classList.contains('multiply-btn'):
-      console.log('You pressed multiply');
-      operator = "x";
-      
-      break;
-
-      case opTarget.classList.contains('add-btn'):
-        console.log('You pressed add');
-        operator = "+";
-        
-        break;
-
-        case opTarget.classList.contains('subtract-btn'):
-      console.log('You pressed subtact');
-      operator = "-";
-     
-      break;
-
+    if (!isSecondNumber) {
+      num1 += value;
+      updateDisplay(num1);
+    } else {
+      num2 += value;
+      updateDisplay(`${num1} ${operator} ${num2}`);
     }
-    updateDisplay(operator);
-    
   });
-}); // end of op btn listener
-
-
-document.querySelector(".equal-btn").addEventListener("click", () => {
-num2 = currentInput;
-let result = calculate(num1, operator, num2);
-
-updateDisplay(result);
-resultDisplayed = true;
 });
 
+// Handle operator input
+opBtns.forEach(opBtn => {
+  opBtn.addEventListener("click", () => {
+    if (num1 === "") return; // Ignore if no number yet
+    if (num2 !== "") return; // Ignore if second number already input
 
+    operator = opBtn.textContent;
+    isSecondNumber = true;
+    updateDisplay(`${num1} ${operator}`);
+  });
+});
 
- function calculate(a, op, b) {
-a = parseFloat(a);
-b = parseFloat(b);
+// Handle equals
+equalsBtn.addEventListener("click", () => {
+  if (num1 === "" || operator === "" || num2 === "") return;
 
+  let n1 = parseFloat(num1);
+  let n2 = parseFloat(num2);
 
-switch (op) {
-case '/': return b !== 0 ? a / b : 'Error';
-case 'x': return a * b;
-case '+': return a + b;
-case '-': return a - b;
-default: return 'Invalid';
+  switch (operator) {
+    case "+":
+      result = n1 + n2;
+      break;
+    case "-":
+      result = n1 - n2;
+      break;
+    case "x":
+      result = n1 * n2;
+      break;
+    case "/":
+      result = (n2 !== 0) ? (n1 / n2) : "Error: Div by 0";
+      break;
+    default:
+      result = "Error";
+  }
 
-}
+  // Show result in a new way (not mixed with input)
+  updateDisplay(result.toString());
 
- };
+  // Reset state for next calculation
+  num1 = result.toString() === "Error: Div by 0" ? "" : result.toString();
+  num2 = "";
+  operator = "";
+  isSecondNumber = false;
+});
 
- //calculate();
-
- function updateDisplay(value) {
-
-  document.querySelector("#display-box").textContent = value;
-
- };
+// Clear everything
+clearBtn.addEventListener("click", () => {
+  num1 = "";
+  num2 = "";
+  operator = "";
+  isSecondNumber = false;
+  result = "";
+  updateDisplay("");
+});
