@@ -25,10 +25,14 @@ body {
 
 #display-box {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     height: 100px;
-    width: 400px;
+    width: auto;
+    border-bottom-width: thin;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    padding-right: 20px;
 
 }
 
