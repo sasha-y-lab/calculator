@@ -209,26 +209,31 @@ container.appendChild(calculatorBox);
 // Create the functions that populate the display when you click the 
 // digit buttons. You should store the content of the display (the number)
 // in a variable for use in the next step.
-let numTarget;
-let num2Target;
 
-let num1 = numTarget;
-let num2 = num2Target;
+
+let divideResult;
 
 
 
 let numBtns = document.querySelectorAll("#number-btn-box .nums");
 let opBtns = document.querySelectorAll("#operator-btn-box button");
-//let updateNumDisplay = displayBox.textContent = "";
-//let num1Txt;
+
+
+let numTarget;
+let num2Target;
+
+let num1;
+let num2;
 
 numBtns.forEach(numBtn => {
 
 
 numBtn.addEventListener("click", (e) => {
   numTarget = e.target;
+  num1 = numTarget;
 
   switch(true) {
+
     case numTarget.classList.contains('one-btn'):
       console.log('You pressed 1');
       displayBox.textContent = oneBtn.textContent;
@@ -244,68 +249,179 @@ numBtn.addEventListener("click", (e) => {
           console.log('You pressed divide');
           displayBox.textContent = oneBtn.textContent + divideBtn.textContent;
 
-          numBtns.forEach(numBtn => {
+          let numBtns2 = document.querySelectorAll(".nums");
 
+          console.log(numBtns2);
 
-            numBtn.addEventListener("click", (e) => {
+          numBtns2.forEach(numBtn2 => {
+
+            numBtn2.addEventListener("click", (e) => {
               num2Target = e.target;
-            
+      
+          
+              num2 = num2Target;
+
               switch(true) {
                 case num2Target.classList.contains('one-btn'):
+
+                
                   console.log('You pressed 1');
                   displayBox.textContent = oneBtn.textContent + divideBtn.textContent + oneBtn.textContent;
+
+                  equalsBtn.addEventListener("click", (e) => {
+
+                  
+                  divide();
+                  divideResult = divide();
+                  console.log(divideResult);
+                  displayBox.textContent = divideResult;
+
+                });
                   break;
 
                   case num2Target.classList.contains('two-btn'):
        console.log('You pressed 2');
        displayBox.textContent = oneBtn.textContent + divideBtn.textContent + twoBtn.textContent;
+       equalsBtn.addEventListener("click", (e) => {
+
+                  
+        divide();
+        divideResult = divide();
+        console.log(divideResult);
+        displayBox.textContent = divideResult;
+
+      });
+
                   break;
 
                   case num2Target.classList.contains('three-btn'):
     console.log('You pressed 3');
     displayBox.textContent = oneBtn.textContent + divideBtn.textContent + threeBtn.textContent;
+    
+    equalsBtn.addEventListener("click", (e) => {
+
+                  
+      divide();
+      divideResult = divide();
+      console.log(divideResult);
+      displayBox.textContent = divideResult;
+
+    });
+
     break;
 
     case num2Target.classList.contains('four-btn'):
       console.log('You pressed 4');
       displayBox.textContent = oneBtn.textContent + divideBtn.textContent + fourBtn.textContent;
+     
+      equalsBtn.addEventListener("click", (e) => {
+
+                  
+        divide();
+        divideResult = divide();
+        console.log(divideResult);
+        displayBox.textContent = divideResult;
+
+      });
+
       break;
 
       case num2Target.classList.contains('five-btn'):
         console.log('You pressed 5');
         displayBox.textContent = oneBtn.textContent + divideBtn.textContent + fiveBtn.textContent;
+       
+        equalsBtn.addEventListener("click", (e) => {
+
+                  
+          divide();
+          divideResult = divide();
+          console.log(divideResult);
+          displayBox.textContent = divideResult;
+
+        });
+
         break;
 
         case num2Target.classList.contains('six-btn'):
     console.log('You pressed 6');
     displayBox.textContent = oneBtn.textContent + divideBtn.textContent + sixBtn.textContent;
+
+    equalsBtn.addEventListener("click", (e) => {
+
+                  
+      divide();
+      divideResult = divide();
+      console.log(divideResult);
+      displayBox.textContent = divideResult;
+
+    });
+
     break;
 
     case num2Target.classList.contains('seven-btn'):
     console.log('You pressed 7');
     displayBox.textContent = oneBtn.textContent + divideBtn.textContent + sevenBtn.textContent;
+    
+    equalsBtn.addEventListener("click", (e) => {
+
+                  
+      divide();
+      divideResult = divide();
+      console.log(divideResult);
+      displayBox.textContent = divideResult;
+
+    });
+
     break;
 
     case num2Target.classList.contains('eight-btn'):
     console.log('You pressed 8');
     displayBox.textContent = oneBtn.textContent + divideBtn.textContent + eightBtn.textContent;
+    
+    equalsBtn.addEventListener("click", (e) => {
+
+                  
+      divide();
+      divideResult = divide();
+      console.log(divideResult);
+      displayBox.textContent = divideResult;
+
+    });
+
     break;
 
     case num2Target.classList.contains('nine-btn'):
     console.log('You pressed 9');
     displayBox.textContent = oneBtn.textContent + divideBtn.textContent + nineBtn.textContent;
+
+    equalsBtn.addEventListener("click", (e) => {
+
+                  
+      divide();
+      divideResult = divide();
+      console.log(divideResult);
+      displayBox.textContent = divideResult;
+
+    });
+
     break;
 
     case num2Target.classList.contains('zero-btn'):
     console.log('You pressed 0');
     displayBox.textContent = oneBtn.textContent + divideBtn.textContent + zeroBtn.textContent;
-    break;
+    
+    equalsBtn.addEventListener("click", (e) => {
 
-              }
-              }); // second operand num btn listener
-          }); // second operand num btn loop
-
+                  
+      divide();
+      divideResult = divide();
+      console.log(divideResult);
+      displayBox.textContent = divideResult;
+    
+    });
+ 
           break;
+  
 
           case opTarget.classList.contains('multiply-btn'):
           console.log('You pressed multiply');
@@ -321,12 +437,11 @@ numBtn.addEventListener("click", (e) => {
           console.log('You pressed subtact');
           displayBox.textContent = oneBtn.textContent + subtractBtn.textContent;
           break;
-
-        }
+  }          
+    
 
       }); // end of op btn listener
     }); // end of op btn loop
-
 
               break;
     
@@ -665,16 +780,26 @@ numBtn.addEventListener("click", (e) => {
         displayBox.textContent = zeroBtn.textContent + subtractBtn.textContent;
         break;
 
+    
+
       }
+
+    
 
     }); // end of op btn listener
   }); // end of op btn loop
 
     break;
+      
+
+}
 
 
-        }
+        });
     
+
+});
+  }
 
 });
 
@@ -683,150 +808,20 @@ numBtn.addEventListener("click", (e) => {
 
 
 
-/*
-
-function pressNum() {
-
-
-
-
-  
-//console.log(numBtns); // all numbered buttons
-
-numBtns.forEach(numBtn => {
-
-  numBtn.addEventListener("click", (e) => {
-    num1 = e.target;
-    
-    //num1 = e.target;
-    console.log(num1); //is number pressed
-    num1Txt = num1.textContent;
-  
-  
-  
-    if (displayBox.textContent = "") {
-   
-
-
-  updateNumDisplay = displayBox.textContent = num1Txt;
-  console.log(updateNumDisplay);
- // return { updateNumDisplay, num1, num1Txt };
-
-
-    } 
-    
-    else {
-
-      console.log(displayBox.textContent = num1Txt);
-        opBtns.forEach(opBtn => {
-        opBtn.addEventListener("click", (e) => {
-            
-      if (displayBox.textContent = num1Txt) {
-       // console.log(num1Txt); // still num1
-        
-        updateNumDisplay = displayBox.textContent = num1Txt + opBtn.textContent;
-        console.log(updateNumDisplay);
-       // console.log(num1Txt); // still num1
-
-        
-
-        if (displayBox.textContent = num1Txt + opBtn.textContent) {
-        
-// num1Txt = num1.textContent;
-     //console.log(num1Txt); // num 1 still
-
-     numBtns.forEach(numBtn => {
-         
-      numBtn.addEventListener("click", (e) => {
-        
-        console.log(num1Txt);
-        num2 = new e.target;
-        console.log(num2);
-        let num2Txt = num2.textContent;
-        
-        console.log(num1Txt); // comes out as num2
-
-          updateNumDisplay = displayBox.textContent = num1Txt + opBtn.textContent + num2Txt;
-          console.log(updateNumDisplay);
-          //return updateNumDisplay;
-//if (equalsBtn.onclick) {
-
 const add = function() {
- // console.log(num1.textContent);
- // console.log(num2.textContent);
- // console.log(parseInt(num1.textContent));
- // console.log(parseInt(num2.textContent));
-  return parseInt(num1.textContent) + parseInt(num2.textContent); //parseInt(num1Txt) + parseInt(num2Txt);
-};
-
-         
-equalsBtn.addEventListener ("click", (e) => {
-
-  
-
-  let getDisplay = document.getElementById("display-box");
-
-          if (getDisplay.textContent.includes('+')) {
-            console.log(add());
-            num1.textContent = add();
-            console.log(displayBox.textContent = num1.textContent);
-           return displayBox.textContent = num1.textContent;
-
-          } else if (getDisplay.textContent.includes('-')) {
-            console.log(subtract());
-           return subtract();
-          } else if (getDisplay.textContent.includes('x')) {
-            console.log(multiply());
-           return multiply();
-          } else if (getDisplay.textContent.includes('/')) {
-            console.log(divide());
-           return divide();
-          } else {
-            return;
-          }
-      
-
-        }); // end of equal btn listener
-
-       // console.log(updateNumDisplay);
-    // return updateNumDisplay;
-
-  }); // end of num btn listener
-  // console.log(updateNumDisplay);
-   //return updateNumDisplay; // this returns only num1 + op no num2
- }); // end of num btn for each loop
-
-       
-      } // end of if inside for num btn 2
-        
-   
-
-      } // end of if
-    
-    }); // end of ops btn listener
-    // console.log(updateNumDisplay);
-    // return updateNumDisplay; this is undefined which is out of scope
-    
-   }); // end of op btn for each
-      
-    } // end of else
-   
-  
-    
-  }); // event listener end
-
-  //console.log(updateNumDisplay); // not defined here so out of scope
-  
-  }); // for each loop end
-
-return numBtns;
-
-
-};
-
-pressNum();
-
-
-*/
-
+   return parseInt(num1.textContent) + parseInt(num2.textContent); 
+ };
  
+ const subtract = function() {
+    return parseInt(num1.textContent) - parseInt(num2.textContent);
+  };
+ 
+  const multiply = function() {
+   return parseInt(num1.textContent) * parseInt(num2.textContent); 
+ };
+ 
+ const divide = function() {
+  console.log(num1);
+  console.log(num2);
+   return parseInt(num1.textContent) / parseInt(num2.textContent);
+ };
