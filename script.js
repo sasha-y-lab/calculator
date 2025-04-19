@@ -209,9 +209,11 @@ container.appendChild(calculatorBox);
 // Create the functions that populate the display when you click the 
 // digit buttons. You should store the content of the display (the number)
 // in a variable for use in the next step.
+let numTarget;
+let num2Target;
 
-let num1;
-let num2;
+let num1 = numTarget;
+let num2 = num2Target;
 
 
 
@@ -224,7 +226,7 @@ numBtns.forEach(numBtn => {
 
 
 numBtn.addEventListener("click", (e) => {
-  let numTarget = e.target;
+  numTarget = e.target;
 
   switch(true) {
     case numTarget.classList.contains('one-btn'):
@@ -242,32 +244,66 @@ numBtn.addEventListener("click", (e) => {
           console.log('You pressed divide');
           displayBox.textContent = oneBtn.textContent + divideBtn.textContent;
 
-          
-          if (numTarget.classList.contains("one-btn")) {
+          numBtns.forEach(numBtn => {
 
-            displayBox.textContent = oneBtn.textContent + divideBtn.textContent + oneBtn.textContent;
-          } else if (numTarget.classList.contains("two-btn")) {
-            displayBox.textContent = oneBtn.textContent + divideBtn.textContent + twoBtn.textContent;
-          } else if (numTarget.classList.contains("three-btn")) {
-            displayBox.textContent = oneBtn.textContent + divideBtn.textContent + threeBtn.textContent;
-          } else if (numTarget.classList.contains("four-btn")) {
-            displayBox.textContent = oneBtn.textContent + divideBtn.textContent + fourBtn.textContent;
 
-          } else if (numTarget.classList.contains("five-btn")) {
-            displayBox.textContent = oneBtn.textContent + divideBtn.textContent + fiveBtn.textContent;
-          } else if (numTarget.classList.contains("six-btn")) {
-            displayBox.textContent = oneBtn.textContent + divideBtn.textContent + sixBtn.textContent;
-          } else if (numTarget.classList.contains("seven-btn") ) {
-            displayBox.textContent = oneBtn.textContent + divideBtn.textContent + sevenBtn.textContent;
-          } else if (numTarget.classList.contains("eight-btn") ) {
-            displayBox.textContent = oneBtn.textContent + divideBtn.textContent + eightBtn.textContent;
-          } else if (numTarget.classList.contains("nine-btn") ) {
-            displayBox.textContent = oneBtn.textContent + divideBtn.textContent + nineBtn.textContent;
-          } else if (numTarget.classList.contains("zero-btn") ) {
-            displayBox.textContent = oneBtn.textContent + divideBtn.textContent + zeroBtn.textContent;
-          } else {
-            return;
-          }
+            numBtn.addEventListener("click", (e) => {
+              num2Target = e.target;
+            
+              switch(true) {
+                case num2Target.classList.contains('one-btn'):
+                  console.log('You pressed 1');
+                  displayBox.textContent = oneBtn.textContent + divideBtn.textContent + oneBtn.textContent;
+                  break;
+
+                  case num2Target.classList.contains('two-btn'):
+       console.log('You pressed 2');
+       displayBox.textContent = oneBtn.textContent + divideBtn.textContent + twoBtn.textContent;
+                  break;
+
+                  case num2Target.classList.contains('three-btn'):
+    console.log('You pressed 3');
+    displayBox.textContent = oneBtn.textContent + divideBtn.textContent + threeBtn.textContent;
+    break;
+
+    case num2Target.classList.contains('four-btn'):
+      console.log('You pressed 4');
+      displayBox.textContent = oneBtn.textContent + divideBtn.textContent + fourBtn.textContent;
+      break;
+
+      case num2Target.classList.contains('five-btn'):
+        console.log('You pressed 5');
+        displayBox.textContent = oneBtn.textContent + divideBtn.textContent + fiveBtn.textContent;
+        break;
+
+        case num2Target.classList.contains('six-btn'):
+    console.log('You pressed 6');
+    displayBox.textContent = oneBtn.textContent + divideBtn.textContent + sixBtn.textContent;
+    break;
+
+    case num2Target.classList.contains('seven-btn'):
+    console.log('You pressed 7');
+    displayBox.textContent = oneBtn.textContent + divideBtn.textContent + sevenBtn.textContent;
+    break;
+
+    case num2Target.classList.contains('eight-btn'):
+    console.log('You pressed 8');
+    displayBox.textContent = oneBtn.textContent + divideBtn.textContent + eightBtn.textContent;
+    break;
+
+    case num2Target.classList.contains('nine-btn'):
+    console.log('You pressed 9');
+    displayBox.textContent = oneBtn.textContent + divideBtn.textContent + nineBtn.textContent;
+    break;
+
+    case num2Target.classList.contains('zero-btn'):
+    console.log('You pressed 0');
+    displayBox.textContent = oneBtn.textContent + divideBtn.textContent + zeroBtn.textContent;
+    break;
+
+              }
+              }); // second operand num btn listener
+          }); // second operand num btn loop
 
           break;
 
